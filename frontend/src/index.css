@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --color-espresso: #211611;
+  --color-dark-coffee: #2B211D;
+  --color-burnished-copper: #85543A;
+  --color-muted-copper: #A77E5C;
+  --color-antique-gold: #C28B3D;
+  --color-champagne-gold: #E8C78E;
+  --color-warm-ivory: #F5EBDD;
+  --color-muted-sage: #75836B;
+
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-display: "Syne", sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+/* Base custom styles & scrollbar */
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #211611;
+  color: #F5EBDD;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #211611;
+}
+::-webkit-scrollbar-thumb {
+  background: #85543A;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C28B3D;
+}
+
+/* Metallic Text Gradients */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #F5EBDD 0%, #E8C78E 40%, #C28B3D 75%, #85543A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.copper-gradient-text {
+  background: linear-gradient(135deg, #E8C78E 0%, #C28B3D 50%, #85543A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Metallic Glass & Borders */
+.metallic-card {
+  background: rgba(43, 33, 29, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(194, 139, 61, 0.22);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(232, 199, 142, 0.15);
+}
+
+.metallic-card:hover {
+  border-color: rgba(194, 139, 61, 0.45);
+  box-shadow: 0 24px 50px -12px rgba(194, 139, 61, 0.12), inset 0 1px 0 rgba(232, 199, 142, 0.3);
+}
+
+.metallic-border {
+  border: 1px solid rgba(194, 139, 61, 0.25);
+}
+
+/* Subtle Film Grain Texture Overlay */
+.film-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Subtle Keyframe Animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1.5deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 6s ease-in-out infinite;
+}

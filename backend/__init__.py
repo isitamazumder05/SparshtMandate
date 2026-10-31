@@ -1,0 +1,2 @@
+"""SpashtMandate AI Backend Package."""
+
